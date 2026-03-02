@@ -28,11 +28,11 @@ services:
     networks:
       - snipeit_network
 
-  ss12000_server:
+  webhooks_server:
     build:
       context: .
       dockerfile: src/server/Dockerfile
-    container_name: ss12000_server
+    container_name: webhooks_server
     ports:
       - "5000:5000"
     environment:
@@ -52,9 +52,9 @@ services:
     container_name: ss12000_client
     environment:
       SS12000_JWT_TOKEN: ${SS12000_JWT_TOKEN}
-      WEBHOOK_URL: "http://ss12000_server:5000/webhook"
+      WEBHOOK_URL: "http://webhooks_server:5000/webhook"
     depends_on:
-      - ss12000_server
+      - webhooks_server
     networks:
       - snipeit_network
 

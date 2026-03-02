@@ -5,7 +5,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from src.server.models.webhook_event import WebhookEvent
 from src.server.services.sync_service import process_entity_sync
-from src.server.utils.config import WEBHOOK_SECRET
+from src.shared.config import WEBHOOK_SECRET
 from src.server.utils.logger import log_info, log_error
 
 webhook_bp = Blueprint("webhook", __name__)

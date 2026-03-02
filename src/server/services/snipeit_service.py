@@ -3,7 +3,7 @@ import secrets
 import string
 from src.server.utils.auth import get_snipeit_headers
 from src.server.utils.logger import log_info, log_error
-from src.server.utils.config import SNIPEIT_API_BASE
+from src.shared.config import SNIPEIT_API_BASE
 
 def sync_user_to_snipeit(user_data: dict) -> bool:
     """Synchronize a user to Snipe-IT."""
