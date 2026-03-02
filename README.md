@@ -67,5 +67,5 @@ This project provides a **client** and **server** to synchronize users, groups, 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ss12000-snipeit-integration.git
+git clone https://github.com/Delph1/snipeIT-SS12000.git
 cd ss12000-snipeit-integration
