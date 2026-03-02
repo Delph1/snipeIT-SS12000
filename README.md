@@ -17,6 +17,11 @@ This project provides a **client** and **server** to synchronize users, groups, 
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
     - [1. Clone the Repository](#1-clone-the-repository)
+    - [2. Install Dependencies](#2-install-dependencies)
+    - [3. Configure Environment Variables](#3-configure-environment-variables)
+- [SS12000 API](#ss12000-api)
+- [Snipe-IT API](#snipe-it-api)
+- [JWT](#jwt)
 
 ---
 
@@ -69,3 +74,25 @@ This project provides a **client** and **server** to synchronize users, groups, 
 ```bash
 git clone https://github.com/Delph1/snipeIT-SS12000.git
 cd ss12000-snipeit-integration
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+
+### 3. Configure Environment Variables
+
+Create a .env file in the project root:
+
+```bash
+touch .env
+
+# SS12000 API
+SS12000_JWT_TOKEN=your_ss12000_jwt_token
+WEBHOOK_SECRET=your_webhook_secret
+
+# Snipe-IT API
+SNIPEIT_API_TOKEN=your_snipeit_api_token
+
+# JWT
+JWT_SECRET_KEY=your_jwt_secret_key
