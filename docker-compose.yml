@@ -1,0 +1,66 @@
+services:
+  snipeit:
+    image: snipe/snipe-it:latest
+    container_name: snipeit
+    ports:
+      - "8080:80"
+    environment:
+      - APP_URL=http://localhost:8080
+      - DB_HOST=db
+      - DB_DATABASE=snipeit
+      - DB_USERNAME=snipeit
+      - DB_PASSWORD=secret
+    depends_on:
+      - db
+    networks:
+      - snipeit_network
+
+  db:
+    image: mysql:8.0
+    container_name: snipeit_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=snipeit
+      - MYSQL_USER=snipeit
+      - MYSQL_PASSWORD=secret
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - snipeit_network
+
+  ss12000_server:
+    build:
+      context: .
+      dockerfile: src/server/Dockerfile
+    container_name: ss12000_server
+    ports:
+      - "5000:5000"
+    environment:
+      - SS12000_JWT_TOKEN=${SS12000_JWT_TOKEN}
+      - SNIPEIT_API_TOKEN=${SNIPEIT_API_TOKEN}
+      - WEBHOOK_SECRET=${WEBHOOK_SECRET}
+      - SNIPEIT_API_BASE=http://snipeit:80/api/v1
+    depends_on:
+      - snipeit
+    networks:
+      - snipeit_network
+
+  ss12000_client:
+    build:
+      context: .
+      dockerfile: src/client/Dockerfile
+    container_name: ss12000_client
+    environment:
+      SS12000_JWT_TOKEN: ${SS12000_JWT_TOKEN}
+      WEBHOOK_URL: "http://ss12000_server:5000/webhook"
+    depends_on:
+      - ss12000_server
+    networks:
+      - snipeit_network
+
+volumes:
+  mysql_data:
+
+networks:
+  snipeit_network:
+    driver: bridge
