@@ -6,21 +6,21 @@ This project provides a **client** and **server** to synchronize users, groups, 
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 
 - [SS12000 Integration with Snipe-IT](#ss12000-integration-with-snipe-it)
-  - [📌 Table of Contents](#-table-of-contents)
-  - [🌟 Features](#-features)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
   - [🏗 Architecture](#-architecture)
     - [Components](#components)
     - [Workflow](#workflow)
-  - [📋 Prerequisites](#-prerequisites)
+  - [Prerequisites](#prerequisites)
   - [🛠 Setup](#-setup)
     - [1. Clone the Repository](#1-clone-the-repository)
 
 ---
 
-## 🌟 Features
+## Features
 
 - **Fetch users and groups** from the SS12000 API.
 - **Register webhooks** to receive real-time updates from SS12000.
@@ -53,7 +53,7 @@ This project provides a **client** and **server** to synchronize users, groups, 
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Docker** and **Docker Compose** (for containerized deployment).
 - **Python 3.9+** (for local development).
