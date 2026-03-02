@@ -1,11 +1,12 @@
 from flask import Flask, jsonify
+from src.server.routes.snipeit_webhook import snipeit_webhook_bp
 from src.server.routes.webhook import webhook_bp
 from src.server.routes.sync import sync_bp
 from src.server.utils.logger import log_info
 from flask_jwt_extended import JWTManager
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from src.server.utils.config import JWT_SECRET_KEY
+from src.shared.config import JWT_SECRET_KEY
 
 app = Flask(__name__)
 
@@ -18,8 +19,9 @@ limiter = Limiter(
     default_limits=["200 per day", "50 per hour"]
 )
 
-app.register_blueprint(webhook_bp)
+app.register_blueprint(snipeit_webhook_bp)
 app.register_blueprint(sync_bp)
+app.register_blueprint(webhook_bp)
 
 @app.route("/health", methods=["GET"])
 def health_check():
