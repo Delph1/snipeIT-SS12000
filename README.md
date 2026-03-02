@@ -11,11 +11,11 @@ This project provides a **client** and **server** to synchronize users, groups, 
 - [SS12000 Integration with Snipe-IT](#ss12000-integration-with-snipe-it)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
-  - [🏗 Architecture](#-architecture)
+  - [Architecture](#architecture)
     - [Components](#components)
     - [Workflow](#workflow)
   - [Prerequisites](#prerequisites)
-  - [🛠 Setup](#-setup)
+  - [Setup](#setup)
     - [1. Clone the Repository](#1-clone-the-repository)
 
 ---
@@ -31,7 +31,7 @@ This project provides a **client** and **server** to synchronize users, groups, 
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 ### Components
 
@@ -62,7 +62,7 @@ This project provides a **client** and **server** to synchronize users, groups, 
 
 ---
 
-## 🛠 Setup
+## Setup
 
 ### 1. Clone the Repository
 
