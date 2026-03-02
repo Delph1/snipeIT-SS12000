@@ -8,23 +8,17 @@ This project provides a **client** and **server** to synchronize users, groups, 
 
 ## Table of Contents
 
-- [SS12000 Integration with Snipe-IT](#ss12000-integration-with-snipe-it)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-  - [Architecture](#architecture)
-    - [Components](#components)
-    - [Workflow](#workflow)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-    - [1. Clone the Repository](#1-clone-the-repository)
-    - [2. Install Dependencies](#2-install-dependencies)
-    - [3. Configure Environment Variables](#3-configure-environment-variables)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
 
 ---
 
 ## Features
 
 - **Fetch users and groups** from the SS12000 API.
+- **Manage Licenses** using the BOL API (v1.2) for orders, assignments, and returns.
 - **Register webhooks** to receive real-time updates from SS12000.
 - **Synchronize data** with Snipe-IT (users, groups, and licenses).
 - **JWT authentication** for secure API access.
@@ -70,7 +64,7 @@ This project provides a **client** and **server** to synchronize users, groups, 
 
 ```bash
 git clone https://github.com/Delph1/snipeIT-SS12000.git
-cd ss12000-snipeit-integration
+cd snipeIT-SS12000
 ```
 
 ### 2. Install Dependencies
