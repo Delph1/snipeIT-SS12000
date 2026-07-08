@@ -1,3 +1,7 @@
+# Abandoned project
+
+The project has been abandoned.
+
 # SS12000 Integration with Snipe-IT
 
 **A module for integrating SS12000 (Swedish school administration standard) with Snipe-IT (IT asset management).**
